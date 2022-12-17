@@ -1,8 +1,7 @@
 module projetDactyloGame {
     requires javafx.graphics;
     requires javafx.controls;
-    //requires javafx.fxml;
-
+    requires org.fxmisc.richtext;
 
     opens jeu;
 }
