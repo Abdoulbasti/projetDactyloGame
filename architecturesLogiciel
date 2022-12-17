@@ -1,0 +1,25 @@
+package mode-solo
+    package mode-normal
+        Mots            :
+        Surbillance     :
+        FilePrincipale  :
+        FileSecondaire  :
+        Statistiques    :
+        CaractereUtile  :
+        ...
+    package mode-jeu
+        DistanceEdition : S'il y'a au moins une erreur dans le mot je joueur perd une vie.
+        ...
+package multi-jeu
+    package client
+        ...
+    package serveur
+        ...
+
+package jeu
+    ...
+
+package tests
+
+package interface-graphique
+    ...

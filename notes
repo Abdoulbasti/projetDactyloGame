@@ -1,0 +1,161 @@
+BUT DU JEU : apprendre à taper au clavier et s’améliorer en se mesurant à d’autres joueurs.
+
+
+3 modes de jeu : Monkeytype + mouvement des mots comme le de tetris
+    ->mode solo :
+        ->normal : Simple logiciel d'entrainement au clavier
+        ->jeu : mode normal + mecanisme de jeu (vie, bonus, ...)
+    ->mode multi-joueur
+
+modeMultiJeu extends modeJeu extends modeNormal : Système d'heritage entre les modes de jeu
+
+surbrillance : faire demarquer clairement les erreurs dans le texte.
+
+Zone Tampon :
+    -> Pour stocker la liste des mots à ajouter,  une file, qui
+      donne les prochains mots à taper  (15 mots).
+    -> Gestion de la file
+
+Session de jeu : Une session de jeu est delimité par un temps ou par un nombre de mots
+                 (je penche plus vers)
+
+Affichage des statistiques : A la fin d'une session de jeu les statistiques(vitesse en mots par minutes, précision, fluidité)
+              sont affichés.
+
+Indications graphique :
+    -> curseur dans le mot à taper
+    -> erreurs signalées en surbrillance dans le texte déjà tapé
+
+
+
+Les mecanismes de jeu(Pour le mode jeu) :
+    -> Pour chaque mot validé par un espace, on compte les erreurs, une vie est retiré
+    pour chaque erreur.
+    -> Pour chaque 100 mot tapé correctement, on changes de nivaux de jeu
+    -> Les mots à taper arrive comme dans tetris(tombe d'en haut) à une viseulement
+    -> Chaque f(n) = 3 ∗ 0,9n seconde on ajoute un autre mot, Si la file était pleine, cela force
+    -> f(n) second est la frequence à la quelle les mots sont ajouter à la file
+    la validation du mot courant (avec perte de vies si incorrect).
+    ->n est le niveau du jeu
+    -> Les niveaux de jeu
+
+
+
+Il y'a differente type de file :
+    -> file mode normal
+    -> file mode jeu
+    -> En multi-jeu l'ajout du mot dans la file est gerer autrement,
+        On a des mots en rouge dont celui qui fini de le taper en premier
+        piège cezs adversaires, en mettant le mot dans la file
+
+
+pointe de vitesse
+
+Certain mot en bleu pour gagner des vies : Comment mettre certain mot en bleu ?
+
+caractères utiles = ensemble des caractère taper correctement,  nous entendons tout
+                    caractère tapé non effacé qui au final appartient à un mot correctement tapé
+
+vitesse = |(Caractères utiles| /temps) / 5
+
+Précision (%) = (|(Caractères utiles| / nombreApuisClavier) * 100
+
+Précision =
+Un mot fait en moyenne 5 Caractères
+
+tests unitaires : On doit effectuer des tests unitaires qui seront ajouter dans le redu,
+                    les tests sont a ecrire avec le framework JUnit5
+
+tests d'integration
+
+IG : Interface Graphique
+
+Gestion des dependence :
+
+Documentation en javadoc :
+
+distance d'edition : comparaison entre le mot à tapper et le mot effectivement tapper
+
+l'espace : chaque clique sur le caractère "espace" permet permet de valider la saisie d'un
+            mot qu'elle soit correcte ou pas.
+
+niveau 1 : 0 - 99
+niveau 2 : 100 - 199
+niveau 3 : 200 - 299
+niveau n : ...
+ainsi de suite...
+
+
+
+
+La monter du niveau est independant des erreurs commise
+
+la taille gererale des mots sont : 4 mots, 5 mots et 6 mots. Donc 5 mots en moyenne
+
+la file contient 15 mots en moyenne(14, 15, ou 16 mots)
+
+
+Note : Le defi serra de tapper le pllus rapidement possible pour éviter le
+remplissage de la file, donc eviter de perdre des points de vies
+
+Si un mot est validé elle disaprait de dans sa descente
+
+Ont pert des vies si la file est pleine
+
+
+le mot qui arrive comme dans tetris ont doit avoir :
+    ->Curseur dans le mot à taper
+    ->Erreur signaler
+
+La comparaison des mots est fait caractère par caractère
+
+
+Au moment de taper le mot dans il est toujours dans la file, il est supprimé de la file
+seulement quand on valide la saisie par le caractère "espace"
+
+
+Est ce possible pour le user de supprimer des caractères du mot en cas d'erreur ???
+
+Possibilité de corriger les mots taper avant la validation et possibilité de correction
+des mots deja validé(Dans le mode-normal)
+
+La distance d'edition(En simple) : Perdre une vie pour un mot incorecte et gagner une vie
+une vie pour le mot correcte et en couleurs bleu
+
+Comment gerer l'attribution de la couleur bleu à certain mot ?
+Comment gerer l'attribution de la couleur rouge à certain mot ?
+
+Dans le mode-normal les mots à taper n'arrive pas comme dans tetris
+
+Utiliser "Scene builder" pour la création de l'interface graphique
+
+Une autre pile pour stocker les mots valideé par un *espace* pour pouvoir les reprendre et les remettre dans la pile de départ en cas de besoin
+
+Liaison entre le clique sur *espace* et la validation du taper.
+
+Stockage de tous les mots avant d’être envoyé dans la file ?
+
+Clique sur *espace* plusieurs fois d’affilé, gestion ?
+
+Gestion de l’apparition de mes mots à l’écran
+
+Pour le mode normal, est ce que la pile est déjà remplie par les tout premiers mots ?
+
+Pour le mode jeu, vu qu’il y’a les mécanismes de jeu, est ce que cela veut dire que la file doit être vide au départ du jeu ?
+
+Un caractère utile : est un caractère taper correctement
+
+La taille du mot de base doit être comparer avec le le mot tapper au clavier met les surplus serons conciderer comme erreur(en surbillance)
+
+Qu’est ce qui se passe si le mot qui arrive comme dans Tetris est tapé correctement ou non ?
+
+Si on valide un mot avec le character *espace*, un autre mot est ajouter à la file seulement si la file n’a pas à moitié pleine
+
+Si la file n’est pas à moitier pleine on ajoute pas alors un mot en cas de validation.
+
+Si on valide un mot avec le character *espace*, un autre mot est ajouter à la file seulement si la file n’a pas à moitié pleine
+
+Si la file n’est pas à moitier pleine on ajoute alors un mot en cas de validation.
+
+
+Faire la comparaison entre chaque situation du mot en cours d’être taper et le vrai mot qui censé être taper jusqu’à  avant chaque validation.
