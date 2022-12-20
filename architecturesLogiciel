@@ -22,4 +22,5 @@ package jeu
 package tests
 
 package interface-graphique
+    -> Zone de text : Pour ecrire nos text
     ...

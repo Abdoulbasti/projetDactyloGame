@@ -13,11 +13,11 @@ surbrillance : faire demarquer clairement les erreurs dans le texte.
 
 Zone Tampon :
     -> Pour stocker la liste des mots à ajouter,  une file, qui
-      donne les prochains mots à taper  (15 mots).
+      donne les prochains mots à taper  (15 mots max dans la file).
     -> Gestion de la file
 
 Session de jeu : Une session de jeu est delimité par un temps ou par un nombre de mots
-                 (je penche plus vers)
+                 (je penche plus vers le nombre de mot)
 
 Affichage des statistiques : A la fin d'une session de jeu les statistiques(vitesse en mots par minutes, précision, fluidité)
               sont affichés.
@@ -66,11 +66,11 @@ Un mot fait en moyenne 5 Caractères
 tests unitaires : On doit effectuer des tests unitaires qui seront ajouter dans le redu,
                     les tests sont a ecrire avec le framework JUnit5
 
-tests d'integration
+tests d'integration ?
 
 IG : Interface Graphique
 
-Gestion des dependence :
+Gestion des dependences avec maven ou gradle
 
 Documentation en javadoc :
 
@@ -95,7 +95,7 @@ la taille gererale des mots sont : 4 mots, 5 mots et 6 mots. Donc 5 mots en moye
 la file contient 15 mots en moyenne(14, 15, ou 16 mots)
 
 
-Note : Le defi serra de tapper le pllus rapidement possible pour éviter le
+Note : Le defi serra de tapper le plus rapidement possible pour éviter le
 remplissage de la file, donc eviter de perdre des points de vies
 
 Si un mot est validé elle disaprait de dans sa descente
@@ -107,20 +107,22 @@ le mot qui arrive comme dans tetris ont doit avoir :
     ->Curseur dans le mot à taper
     ->Erreur signaler
 
-La comparaison des mots est fait caractère par caractère
+La comparaison des mots est fait caractère par caractère.
 
 
 Au moment de taper le mot dans il est toujours dans la file, il est supprimé de la file
 seulement quand on valide la saisie par le caractère "espace"
 
-
 Est ce possible pour le user de supprimer des caractères du mot en cas d'erreur ???
+Oui, Le cas ou on reviens sur un mot deja taper pour le corriger
 
 Possibilité de corriger les mots taper avant la validation et possibilité de correction
 des mots deja validé(Dans le mode-normal)
 
-La distance d'edition(En simple) : Perdre une vie pour un mot incorecte et gagner une vie
-une vie pour le mot correcte et en couleurs bleu
+La distance d'edition(En simple) :
+    -> Perdre une vie pour un mot incorecte
+    -> Gagner une vie pour le mot correcte et en couleurs bleu
+    -> Pour un mot correctement taper qui n'a aucune couleur on ne fait rien
 
 Comment gerer l'attribution de la couleur bleu à certain mot ?
 Comment gerer l'attribution de la couleur rouge à certain mot ?
@@ -131,19 +133,20 @@ Utiliser "Scene builder" pour la création de l'interface graphique
 
 Une autre pile pour stocker les mots valideé par un *espace* pour pouvoir les reprendre et les remettre dans la pile de départ en cas de besoin
 
-Liaison entre le clique sur *espace* et la validation du taper.
+Liaison entre le clique sur *espace* et la validation du mot taper.
 
-Stockage de tous les mots avant d’être envoyé dans la file ?
+Stockage de tous les mots avant d’être envoyé dans la file ? (fichier, stocker dans une variable, ...)
 
 Clique sur *espace* plusieurs fois d’affilé, gestion ?
+Si au moins un caratère est taper pour un mot àa taper un espace permet deja valider ce mot qu'elle soit valide ou pas.
 
-Gestion de l’apparition de mes mots à l’écran
+Gestion de l’apparition de mes mots à l’écran ?
 
-Pour le mode normal, est ce que la pile est déjà remplie par les tout premiers mots ?
+Pour le mode normal, est ce que la pile est déjà remplie par les tout premiers mots ? OUI!!!
 
-Pour le mode jeu, vu qu’il y’a les mécanismes de jeu, est ce que cela veut dire que la file doit être vide au départ du jeu ?
+Pour le mode jeu, vu qu’il y’a les mécanismes de jeu, est ce que cela veut dire que la file doit être vide au départ du jeu ? OUI !!!
 
-Un caractère utile : est un caractère taper correctement
+Un caractère utile : est un caractère taper correctement et à la bonne position.
 
 La taille du mot de base doit être comparer avec le le mot tapper au clavier met les surplus serons conciderer comme erreur(en surbillance)
 
@@ -159,3 +162,5 @@ Si la file n’est pas à moitier pleine on ajoute alors un mot en cas de valida
 
 
 Faire la comparaison entre chaque situation du mot en cours d’être taper et le vrai mot qui censé être taper jusqu’à  avant chaque validation.
+
+Les caractère retour à la ligne sont ignorée(Il sont là mais on ne tiens pas compte de ça)

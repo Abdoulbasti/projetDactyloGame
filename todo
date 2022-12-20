@@ -1,5 +1,7 @@
-1. Parametrage du projet avec maven et tester son fonctionnement
-2. Import des bibliothèque et test de leur fonctionnement
-3. Creation des packages
-4. Regarder des video sur un projet similaire à celui la
-5. Commencer le mode normal
+ok 1. Parametrage du projet avec maven et tester son fonctionnement
+ok 2. Import des bibliothèque et test de leur fonctionnement
+ok 3. Creation des packages
+ok 4. Regarder des video sur un projet similaire à celui la
+ok 5. Relire mes notes
+5. Effectuer l'interface graphique (avec scene builder)
+6. Commencer le mode normal

@@ -27,6 +27,14 @@
             <version>${javafx.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>19</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.fxmisc.richtext/richtextfx -->
         <dependency>
             <groupId>org.fxmisc.richtext</groupId>
@@ -49,6 +57,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.gluonhq.scenebuilder/scenebuilder-all -->
+        <!--<dependency>
+            <groupId>com.gluonhq.scenebuilder</groupId>
+            <artifactId>scenebuilder-all</artifactId>
+            <version>8.3.0</version>
+        </dependency>-->
+
+
     </dependencies>
 
     <build>
@@ -59,6 +75,8 @@
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
                     <mainClass>jeu</mainClass>
+                    <!--<mainClass>javafxtoto</mainClass>-->
+
                 </configuration>
             </plugin>
         </plugins>
