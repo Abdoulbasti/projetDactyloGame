@@ -59,5 +59,4 @@ public class Test extends Application {
         this.parametrage_fenetre_principale(fenetre_principale);
     }
 
-
 }

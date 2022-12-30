@@ -8,10 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import constantes.Pargraphes;
+import constantes.Paragraphes;
 
 public class Menu_principale extends Application{
 
@@ -25,7 +24,7 @@ public class Menu_principale extends Application{
         //VBox parent = new VBox();
         Group parent = new Group();
 
-        Label text_affiche = new Label(Pargraphes.PARAGRAPHE_1);
+        Label text_affiche = new Label(Paragraphes.PARAGRAPHE_1);
         TextArea saisie_utilisateur = new TextArea();
         emplacement_champs_texte(saisie_utilisateur);
 

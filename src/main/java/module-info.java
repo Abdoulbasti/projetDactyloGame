@@ -1,9 +1,9 @@
 module projetDactyloGame {
-    requires transitive javafx.graphics;
+    requires  javafx.graphics;
     requires javafx.controls;
     requires org.fxmisc.richtext;
     requires javafx.fxml;
-
+    requires  javafx.base;
 
     exports interface_graphique;
     exports jeu;
