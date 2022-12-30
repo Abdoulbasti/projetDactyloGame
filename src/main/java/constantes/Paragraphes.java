@@ -8,7 +8,7 @@ public class Paragraphes {
 
 
     public static final String PARAGRAPHE_2 =
-            "La littérature est l’ensemble des œuvres écrites ou orales auxquelles on reconnaît une valeur esthétique c'est un art exprimant un idéal de beauté Grâce aux productions littéraires elle permet de manifester des";
+            "La littérature est l’ensemble des écrites ou orales auxquelles on reconnaît une valeur esthétique c'est un art exprimant un idéal de beauté Grâce aux productions littéraires elle permet de manifester des";
 
 
     public static final String PARAGRAPHE_3 =
